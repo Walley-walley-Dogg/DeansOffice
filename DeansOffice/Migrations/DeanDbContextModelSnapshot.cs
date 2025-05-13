@@ -30,6 +30,24 @@ namespace DeansOffice.Migrations
                     b.ToTable("GroupSubjects");
                 });
 
+            modelBuilder.Entity("DeansOffice.Database.Models.AdminAuthentication", b =>
+                {
+                    b.Property<int>("AdminAuthenticationID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Password_hashed");
+
+                    b.Property<int>("TeacherID");
+
+                    b.Property<DateTime>("auth_time");
+
+                    b.HasKey("AdminAuthenticationID");
+
+                    b.HasIndex("TeacherID");
+
+                    b.ToTable("AdminAuthentications");
+                });
+
             modelBuilder.Entity("DeansOffice.Database.Models.Grade", b =>
                 {
                     b.Property<int>("GradeID")
@@ -185,6 +203,8 @@ namespace DeansOffice.Migrations
 
                     b.Property<string>("MiddleName");
 
+                    b.Property<string>("Password_hashed");
+
                     b.Property<string>("PhoneNumber");
 
                     b.HasKey("TeacherID");
@@ -215,6 +235,14 @@ namespace DeansOffice.Migrations
                     b.HasOne("DeansOffice.Database.Models.Subject", "Subject")
                         .WithMany("GroupSubjects")
                         .HasForeignKey("SubjectID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("DeansOffice.Database.Models.AdminAuthentication", b =>
+                {
+                    b.HasOne("DeansOffice.Database.Models.Teacher", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

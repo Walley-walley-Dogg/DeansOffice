@@ -17,6 +17,7 @@ namespace DeansOffice.Database.Models
         public string PhoneNumber { get; set; }
         public string Department { get; set; }
         public string AcademicTitle { get; set; }
+        public string Password_hashed { get; set; }
 
         public ICollection<Group> CuratedGroups { get; set; }
         public ICollection<TeacherSubject> TeacherSubjects { get; set; }

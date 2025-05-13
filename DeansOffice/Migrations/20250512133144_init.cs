@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DeansOffice.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,11 +50,33 @@ namespace DeansOffice.Migrations
                     Email = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     Department = table.Column<string>(nullable: true),
-                    AcademicTitle = table.Column<string>(nullable: true)
+                    AcademicTitle = table.Column<string>(nullable: true),
+                    Password_hashed = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teachers", x => x.TeacherID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AdminAuthentications",
+                columns: table => new
+                {
+                    AdminAuthenticationID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    TeacherID = table.Column<int>(nullable: false),
+                    Password_hashed = table.Column<string>(nullable: true),
+                    auth_time = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdminAuthentications", x => x.AdminAuthenticationID);
+                    table.ForeignKey(
+                        name: "FK_AdminAuthentications_Teachers_TeacherID",
+                        column: x => x.TeacherID,
+                        principalTable: "Teachers",
+                        principalColumn: "TeacherID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -227,6 +249,11 @@ namespace DeansOffice.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_AdminAuthentications_TeacherID",
+                table: "AdminAuthentications",
+                column: "TeacherID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Grades_StudentID",
                 table: "Grades",
                 column: "StudentID");
@@ -279,6 +306,9 @@ namespace DeansOffice.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AdminAuthentications");
+
             migrationBuilder.DropTable(
                 name: "Grades");
 

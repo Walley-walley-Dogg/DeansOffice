@@ -13,6 +13,7 @@ public class DeanDbContext : DbContext
     public DbSet<Schedule> Schedules { get; set; }
     public DbSet<Grade> Grades { get; set; }
     public DbSet<Report> Reports { get; set; }
+    public DbSet<AdminAuthentication> AdminAuthentications { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
