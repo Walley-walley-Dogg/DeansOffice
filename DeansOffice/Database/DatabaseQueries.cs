@@ -47,13 +47,13 @@ namespace DeansOffice.Database
 
 
         }
-        public static void Login(string email, string password)
+        public static Teacher Login(string email, string password)
         {
             var db = new DeanDbContext();
             password = EncryptString(password);
 
             var teacher = db.Teachers.FirstOrDefault(x => x.Email == email && DecryptString(x.Password_hashed) == DecryptString(password));
-
+            return teacher;
         }
         private static string EncryptString(string plainText)
         {

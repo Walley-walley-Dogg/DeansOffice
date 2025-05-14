@@ -1,0 +1,63 @@
+﻿<Page x:Class="DeansOffice.Pages.GroupsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DeansOffice.Pages"
+      mc:Ignorable="d" 
+        d:DesignHeight="450" d:DesignWidth="500"
+   Title="Управление группами"
+    Background="#252526"
+    Loaded="Page_Loaded">
+
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель инструментов -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <Button x:Name="btnAdd" Content="Добавить" 
+                  Click="btnAdd_Click"
+                  Style="{StaticResource PrimaryButtonStyle}"
+                  Width="120"/>
+
+            <Button x:Name="btnEdit" Content="Редактировать" 
+                  Click="btnEdit_Click"
+                  Style="{StaticResource SecondaryButtonStyle}"
+                  Margin="10,0,0,0"
+                  Width="120"/>
+
+            <Button x:Name="btnDelete" Content="Удалить" 
+                  Click="btnDelete_Click"
+                  Style="{StaticResource DangerButtonStyle}"
+                  Margin="10,0,0,0"
+                  Width="120"/>
+
+            <Button x:Name="btnRefresh" Content="Обновить" 
+                  Click="btnRefresh_Click"
+                  Style="{StaticResource SecondaryButtonStyle}"
+                  Margin="10,0,0,0"
+                  Width="120"/>
+        </StackPanel>
+
+        <!-- Список групп -->
+        <DataGrid x:Name="GroupsGrid"
+                Grid.Row="1"
+                TextBlock.TextAlignment="Center"
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                SelectionMode="Single"
+                Style="{StaticResource DarkDataGridStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding GroupID}" Width="Auto"/>
+                <DataGridTextColumn Header="Имя группы" Binding="{Binding GroupName}" Width="1.5*"/>
+                <DataGridTextColumn Header="Курс" Binding="{Binding Course}" Width="1.5*"/>
+                <DataGridTextColumn Header="Направление" Binding="{Binding Specialty}" Width="1.5*"/>
+                <DataGridTextColumn Header="ID Куратора" Binding="{Binding CuratorID}" Width="1.5*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

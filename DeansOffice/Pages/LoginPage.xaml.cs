@@ -1,4 +1,5 @@
 ﻿using DeansOffice.Database;
+using DeansOffice.Database.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,13 +43,14 @@ namespace DeansOffice.Pages
 
             try
             {
-                DatabaseQueries.Login(
+                Teacher admin =  DatabaseQueries.Login(
                     EmailTextBox.Text,
                     PasswordBox.Password
                   
                 );
-
                 MessageBox.Show("Вход прошел успешно!");
+                MainPage mainPage = new MainPage(admin);
+                mainPage.Show();
                 this.Close();
             }
             catch (Exception ex)
