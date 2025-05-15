@@ -15,11 +15,13 @@ namespace DeansOffice.ViewModels
     {
         public ICommand NavigateToStudentsCommand { get; }
         public ICommand NavigateToGroupsCommand { get; }
+        public ICommand NavigateToTeachersCommand { get; }
 
         public MainViewModel()
         {
             NavigateToStudentsCommand = new RelayCommand(NavigateToStudents);
             NavigateToGroupsCommand = new RelayCommand(NavigateToGroups);
+            NavigateToTeachersCommand = new RelayCommand(NavigateToTeachers);
         }
 
         private void NavigateToStudents()
@@ -29,6 +31,10 @@ namespace DeansOffice.ViewModels
         private void NavigateToGroups()
         {
             NavigationService.Navigate(new GroupsPage());
+        }
+        private void NavigateToTeachers()
+        {
+            NavigationService.Navigate(new Teachers());
         }
         public static class NavigationService
         {

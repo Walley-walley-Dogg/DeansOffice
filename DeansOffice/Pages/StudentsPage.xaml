@@ -44,7 +44,7 @@
         </StackPanel>
 
         <!-- Список студентов -->
-        <DataGrid x:Name="teachersGrid"
+        <DataGrid x:Name="studentsGrid"
                   Grid.Row="1"
                   TextBlock.TextAlignment="Center"
                   AutoGenerateColumns="False"
@@ -52,13 +52,13 @@
                   SelectionMode="Single"
                   Style="{StaticResource DarkDataGridStyle}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding TeacherID}" Width="Auto"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding StudentID}" Width="Auto"/>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="1.5*"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="1.5*"/>
                 <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}" Width="1.5*"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="1.5*"/>
-                <DataGridTextColumn Header="PhoneNumber" Binding="{Binding Email}" Width="1.5*"/>
-               
+                <DataGridTextColumn Header="Дата рождения" 
+                                    Binding="{Binding BirthDate, StringFormat=\{0:dd.MM.yyyy\}}" 
+                                    Width="1*"/>
                 <DataGridTextColumn Header="Пол" Binding="{Binding Gender}" Width="0.8*"/>
                 <DataGridTextColumn Header="Год поступления" Binding="{Binding EnrollmentYear}" Width="0.8*"/>
                 <DataGridTextColumn Header="Группа" Binding="{Binding GroupID}" Width="1.2*"/>

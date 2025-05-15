@@ -201,14 +201,19 @@
     <Compile Include="Pages\StudentsPage.xaml.cs">
       <DependentUpon>StudentsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TeacherEditDialog.xaml.cs">
+      <DependentUpon>TeacherEditDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Teachers.xaml.cs">
       <DependentUpon>Teachers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\GroupService.cs" />
     <Compile Include="Services\StudentService.cs" />
+    <Compile Include="Services\TeacherService.cs" />
     <Compile Include="ViewModels\GroupEditViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StudentEditViewModel.cs" />
+    <Compile Include="ViewModels\TeacherEditDialogViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -259,6 +264,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\StudentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TeacherEditDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

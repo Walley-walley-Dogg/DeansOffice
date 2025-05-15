@@ -10,7 +10,57 @@
      Background="#252526"
      Loaded="Page_Loaded">
 
-    <Grid>
-        
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель инструментов -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <Button x:Name="btnAdd" Content="Добавить" 
+                 Click="btnAdd_Click"
+                 Style="{StaticResource PrimaryButtonStyle}"
+                 Width="120"/>
+
+            <Button x:Name="btnEdit" Content="Редактировать" 
+                 Click="btnEdit_Click"
+                 Style="{StaticResource SecondaryButtonStyle}"
+                 Margin="10,0,0,0"
+                 Width="120"/>
+
+            <Button x:Name="btnDelete" Content="Удалить" 
+                 Click="btnDelete_Click"
+                 Style="{StaticResource DangerButtonStyle}"
+                 Margin="10,0,0,0"
+                 Width="120"/>
+
+            <Button x:Name="btnRefresh" Content="Обновить" 
+                 Click="btnRefresh_Click"
+                 Style="{StaticResource SecondaryButtonStyle}"
+                 Margin="10,0,0,0"
+                 Width="120"/>
+        </StackPanel>
+
+        <!-- Список Преподавателей -->
+        <DataGrid x:Name="teachersGrid"
+               Grid.Row="1"
+               TextBlock.TextAlignment="Center"
+               AutoGenerateColumns="False"
+               CanUserAddRows="False"
+               SelectionMode="Single"
+               Style="{StaticResource DarkDataGridStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding TeacherID}" Width="Auto"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="1.5*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="1.5*"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}" Width="1.5*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="1.5*"/>
+                <DataGridTextColumn Header="PhoneNumber" Binding="{Binding Email}" Width="1.5*"/>
+                <DataGridTextColumn Header="Кафедра" Binding="{Binding Department}" Width="0.8*"/>
+                <DataGridTextColumn Header="Звание" Binding="{Binding AcademicTitle}" Width="0.8*"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding AcademicTitle}" Width="1.2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
