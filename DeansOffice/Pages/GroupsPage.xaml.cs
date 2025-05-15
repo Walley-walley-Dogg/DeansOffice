@@ -76,7 +76,7 @@ namespace DeansOffice.Pages
                 {
                     try
                     {
-                        _groupService.UpdateGroup(dialog._group);
+                        _groupService.UpdateGroup(dialog._group, selectedGroup.GroupID);
                         LoadGroups();
                     }
                     catch (Exception ex)

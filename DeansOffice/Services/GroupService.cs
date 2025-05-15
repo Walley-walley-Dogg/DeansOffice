@@ -26,14 +26,14 @@ namespace DeansOffice.Services
             db.SaveChanges();
         }
 
-        public void UpdateGroup(Group updatedGroup)
+        public void UpdateGroup(Group updatedGroup, int _id)
         {
             if (updatedGroup == null)
                 throw new ArgumentNullException(nameof(updatedGroup));
 
             using (var db = new DeanDbContext())
             {
-                var existingGroup = db.Groups.FirstOrDefault(x => x.GroupID == updatedGroup.GroupID);
+                var existingGroup = db.Groups.FirstOrDefault(x => x.GroupID == _id);
 
                 if (existingGroup == null)
                     throw new ArgumentException($"Group with ID {updatedGroup.GroupID} not found.");

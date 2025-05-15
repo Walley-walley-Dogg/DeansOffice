@@ -34,7 +34,7 @@ namespace DeansOffice.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            //_group = ViewModel.Group;
+            _group = ViewModel.Group;
             DialogResult = true;
             return;
         }

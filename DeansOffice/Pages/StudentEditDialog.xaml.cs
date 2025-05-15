@@ -33,7 +33,7 @@ namespace DeansOffice.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            //_student = ViewModel.Student;
+            _student = ViewModel.Student;
             DialogResult = true;
             return;
         }

@@ -78,7 +78,7 @@ namespace DeansOffice.Pages
                 {
                     try
                     {
-                        _teacherService.UpdateTeacher(dialog._teacher);
+                        _teacherService.UpdateTeacher(dialog._teacher, selectedTeacher.TeacherID);
                         LoadTeachers();
                     }
                     catch (Exception ex)

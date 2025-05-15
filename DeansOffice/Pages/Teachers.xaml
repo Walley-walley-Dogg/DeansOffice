@@ -59,7 +59,6 @@
                 <DataGridTextColumn Header="PhoneNumber" Binding="{Binding Email}" Width="1.5*"/>
                 <DataGridTextColumn Header="Кафедра" Binding="{Binding Department}" Width="0.8*"/>
                 <DataGridTextColumn Header="Звание" Binding="{Binding AcademicTitle}" Width="0.8*"/>
-                <DataGridTextColumn Header="Группа" Binding="{Binding AcademicTitle}" Width="1.2*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

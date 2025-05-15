@@ -27,14 +27,29 @@ namespace DeansOffice.Services
             db.SaveChanges();
         }
 
-        public void UpdateStudent(Student student)
+        public void UpdateStudent(Student student, int _id)
         {
-            var db = new DeanDbContext();
-            var student_to_update = db.Students.FirstOrDefault(x => x.StudentID == student.StudentID);
+            if (student == null)
+                throw new ArgumentNullException(nameof(student));
 
-            if (student_to_update != null)
+            using (var db = new DeanDbContext())
             {
-                db.Students.Update(student_to_update);
+                var existingStudent = db.Students.FirstOrDefault(x => x.StudentID == _id);
+
+                if (existingStudent == null)
+                    throw new ArgumentException($"Group with ID {existingStudent.StudentID} not found.");
+
+                existingStudent.LastName = student.LastName;
+                existingStudent.FirstName = student.FirstName;
+                existingStudent.MiddleName = student.MiddleName;
+                existingStudent.BirthDate = student.BirthDate;
+                existingStudent.Gender = student.Gender;
+                existingStudent.EnrollmentYear = student.EnrollmentYear;
+                existingStudent.Email = student.Email;
+                existingStudent.PhoneNumber = student.PhoneNumber;
+                existingStudent.GroupID = student.GroupID;
+
+
                 db.SaveChanges();
             }
         }

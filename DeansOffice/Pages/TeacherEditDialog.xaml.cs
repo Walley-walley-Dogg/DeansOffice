@@ -33,6 +33,15 @@ namespace DeansOffice.Pages
         }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            _teacher = ViewModel.teacher;
+            ViewModel.teacher.FirstName = txtFirstName.Text;
+            ViewModel.teacher.LastName = txtLastName.Text;
+            ViewModel.teacher.MiddleName = txtMiddleName.Text;
+            ViewModel.teacher.PhoneNumber = txtPhoneNumber.Text;
+            ViewModel.teacher.Email = txtPhoneNumber.Text;
+            ViewModel.teacher.AcademicTitle = cbAcademicTitle.Text;
+            ViewModel.teacher.Department = cbDepartment.Text;
+
             DialogResult = true;
             return;
         }

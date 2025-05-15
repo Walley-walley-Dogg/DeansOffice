@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,13 +24,28 @@ namespace DeansOffice.Services
             db.SaveChanges();
         }
 
-        public void UpdateTeacher(Teacher teacher)
+        public void UpdateTeacher(Teacher teacher, int _id)
         {
-            var db = new DeanDbContext();
-            var teacher_to_update = db.Teachers.FirstOrDefault(x => x.TeacherID == teacher.TeacherID);
-            if(teacher_to_update != null)
+            if (teacher == null)
+                throw new ArgumentNullException(nameof(teacher));
+
+            using (var db = new DeanDbContext())
             {
-                db.Teachers.Update(teacher_to_update);
+                var existingTeacher = db.Teachers.FirstOrDefault(x => x.TeacherID == _id);
+
+                if (existingTeacher == null)
+                    throw new ArgumentException($"Group with ID {existingTeacher.TeacherID} not found.");
+
+                existingTeacher.LastName = teacher.LastName;
+                existingTeacher.FirstName = teacher.FirstName;
+                existingTeacher.MiddleName = teacher.MiddleName;
+                existingTeacher.Email = teacher.Email;
+                existingTeacher.PhoneNumber = teacher.PhoneNumber;
+                existingTeacher.Department = teacher.Department;
+                existingTeacher.AcademicTitle = teacher.AcademicTitle;
+
+
+
                 db.SaveChanges();
             }
         }

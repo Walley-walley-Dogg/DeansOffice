@@ -82,7 +82,7 @@ namespace DeansOffice.Pages
                 {
                     try
                     {
-                        _studentService.UpdateStudent(dialog._student);
+                        _studentService.UpdateStudent(dialog._student, selectedStudent.StudentID);
                         LoadStudents();
                     }
                     catch (Exception ex)
