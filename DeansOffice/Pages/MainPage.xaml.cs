@@ -32,9 +32,12 @@ namespace DeansOffice.Pages
             DataContext = new MainViewModel();
         }
 
-   
-      
-
+        private void Exit_btn_click(object sender, RoutedEventArgs e)
+        {
+            var loginPage = new LoginPage();
+            loginPage.Show();
+            this.Close();
+        }
     }
     //public class BoolToVisibilityConverter : IValueConverter
     //{

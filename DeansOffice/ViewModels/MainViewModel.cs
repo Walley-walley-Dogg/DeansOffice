@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -16,12 +17,17 @@ namespace DeansOffice.ViewModels
         public ICommand NavigateToStudentsCommand { get; }
         public ICommand NavigateToGroupsCommand { get; }
         public ICommand NavigateToTeachersCommand { get; }
+        public ICommand NavigateToCurriculumCommand { get; }
+        public ICommand ExitCommand { get; }
+
 
         public MainViewModel()
         {
             NavigateToStudentsCommand = new RelayCommand(NavigateToStudents);
             NavigateToGroupsCommand = new RelayCommand(NavigateToGroups);
             NavigateToTeachersCommand = new RelayCommand(NavigateToTeachers);
+            NavigateToCurriculumCommand = new RelayCommand(NavigateToCurriculum);
+
         }
 
         private void NavigateToStudents()
@@ -36,6 +42,10 @@ namespace DeansOffice.ViewModels
         {
             NavigationService.Navigate(new Teachers());
         }
+        public void NavigateToCurriculum()
+        {
+            NavigationService.Navigate(new CurriculumPage());
+        }
         public static class NavigationService
         {
             public static Frame MainFrame { get; set; }
@@ -47,7 +57,7 @@ namespace DeansOffice.ViewModels
                     MainFrame.Navigate(page);
                 }
             }
-
+   
             public static void Navigate<T>() where T : Page, new()
             {
                 Navigate(new T());

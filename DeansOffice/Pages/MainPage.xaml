@@ -92,9 +92,9 @@
                         Style="{StaticResource NavButtonStyle}"
                         Command="{Binding NavigateToScheduleCommand}"/>
 
-                <Button Content="Журнал оценок" 
+                <!--<Button Content="Журнал оценок" 
                         Style="{StaticResource NavButtonStyle}"
-                        Command="{Binding NavigateToGradesCommand}"/>
+                        Command="{Binding NavigateToGradesCommand}"/>-->
 
                 <!-- Администрирование -->
                 <TextBlock Text="АДМИНИСТРИРОВАНИЕ" Style="{StaticResource SectionHeaderStyle}"/>
@@ -106,19 +106,19 @@
                 <Button Content="Генерация отчетов" 
                         Style="{StaticResource NavButtonStyle}"
                         Command="{Binding NavigateToReportsCommand}"/>
-                <Button Content="Личный кабинет" 
+                <!--<Button Content="Личный кабинет" 
                         Style="{StaticResource NavButtonStyle}"
-                        Command="{Binding NavigateToProfileCommand}"/>
+                        Command="{Binding NavigateToProfileCommand}"/>-->
 
                 <!-- Нижняя часть -->
                 <StackPanel VerticalAlignment="Bottom" Margin="0,0,0,20">
                     <Separator Background="#3E3E40" Margin="10"/>
-                    <Button Content="Настройки" 
+                    <!--<Button Content="Настройки" 
                             Style="{StaticResource NavButtonStyle}"
-                            Command="{Binding NavigateToSettingsCommand}"/>
+                            Command="{Binding NavigateToSettingsCommand}"/>-->
                     <Button Content="Выход" 
                             Style="{StaticResource NavButtonStyle}"
-                            Command="{Binding ExitCommand}"/>
+                            Click="Exit_btn_click"/>
                 </StackPanel>
             </StackPanel>
         </Border>

@@ -1,4 +1,5 @@
 ﻿using DeansOffice.Database;
+using DeansOffice.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,6 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 
 namespace DeansOffice.Pages
 {
@@ -56,7 +56,16 @@ namespace DeansOffice.Pages
                 MessageBox.Show("Пожалуйста, введите телефон");
                 return;
             }
-
+            if(!EmailValidation.is_good(EmailTextBox.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Введите корректную электронную почту.", "Ошибка");
+                return;
+            }
+            if(!PhoneValidation.is_good(PhoneTextBox.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Введите корректный номер телефона (пример: +79991234567).", "Ошибка");
+                return;
+            }
             if (PasswordBox.Password != ConfirmPasswordBox.Password)
             {
                 MessageBox.Show("Пароли не совпадают");
@@ -80,7 +89,7 @@ namespace DeansOffice.Pages
                 MessageBox.Show("Пожалуйста, выберите звание");
                 return;
             }
-
+            
             try
             {
                 bool reg = DatabaseQueries.RegisterNewUser(

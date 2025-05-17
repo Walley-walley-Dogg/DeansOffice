@@ -19,6 +19,8 @@ namespace DeansOffice.Database.Models
         public string AcademicTitle { get; set; }
         public string Password_hashed { get; set; }
 
+        public string FullName => $"{LastName} {FirstName} {MiddleName}".Trim();
+
         public ICollection<Group> CuratedGroups { get; set; }
         public ICollection<TeacherSubject> TeacherSubjects { get; set; }
     }
