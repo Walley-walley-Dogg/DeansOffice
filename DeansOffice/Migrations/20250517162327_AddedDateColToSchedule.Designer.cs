@@ -2,14 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DeansOffice.Migrations
 {
     [DbContext(typeof(DeanDbContext))]
-    partial class DeanDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250517162327_AddedDateColToSchedule")]
+    partial class AddedDateColToSchedule
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

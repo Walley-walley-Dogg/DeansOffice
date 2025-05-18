@@ -19,7 +19,8 @@ namespace DeansOffice.ViewModels
         public ICommand NavigateToTeachersCommand { get; }
         public ICommand NavigateToCurriculumCommand { get; }
         public ICommand ExitCommand { get; }
-
+        public ICommand NavigateToScheduleCommand { get; }
+        public ICommand NavigateToReportsCommand { get; }
 
         public MainViewModel()
         {
@@ -27,9 +28,17 @@ namespace DeansOffice.ViewModels
             NavigateToGroupsCommand = new RelayCommand(NavigateToGroups);
             NavigateToTeachersCommand = new RelayCommand(NavigateToTeachers);
             NavigateToCurriculumCommand = new RelayCommand(NavigateToCurriculum);
-
+            NavigateToScheduleCommand = new RelayCommand(NavigateToSchedule);
+            NavigateToReportsCommand = new RelayCommand(NavigateToReports);
         }
-
+        public void NavigateToReports()
+        {
+            NavigationService.Navigate(new ReportsPage());
+        }
+        public void NavigateToSchedule()
+        {
+            NavigationService.Navigate(new SchedulePage());
+        }
         private void NavigateToStudents()
         {
             NavigationService.Navigate(new StudentsPage());
@@ -57,7 +66,7 @@ namespace DeansOffice.ViewModels
                     MainFrame.Navigate(page);
                 }
             }
-   
+      
             public static void Navigate<T>() where T : Page, new()
             {
                 Navigate(new T());

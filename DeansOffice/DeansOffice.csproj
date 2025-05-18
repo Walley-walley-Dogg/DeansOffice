@@ -196,6 +196,10 @@
     <Compile Include="Migrations\20250517095504_FullNameForTeacherModel.Designer.cs">
       <DependentUpon>20250517095504_FullNameForTeacherModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20250517162327_AddedDateColToSchedule.cs" />
+    <Compile Include="Migrations\20250517162327_AddedDateColToSchedule.Designer.cs">
+      <DependentUpon>20250517162327_AddedDateColToSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CurriculumPage.xaml.cs">
       <DependentUpon>CurriculumPage.xaml</DependentUpon>
     </Compile>
@@ -204,6 +208,12 @@
     </Compile>
     <Compile Include="Pages\GroupsPage.xaml.cs">
       <DependentUpon>GroupsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportsPage.xaml.cs">
+      <DependentUpon>ReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SchedulePage.xaml.cs">
+      <DependentUpon>SchedulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SemesterProvider.cs" />
     <Compile Include="Pages\StudentEditDialog.xaml.cs">
@@ -274,6 +284,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ReportsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

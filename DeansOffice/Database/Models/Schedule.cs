@@ -21,6 +21,7 @@ namespace DeansOffice.Database.Models
 
         public int DayOfWeek { get; set; }
         public DateTime TimeSlot { get; set; }
+        public string Date { get; set; }
         public string Room { get; set; }
     }
 
