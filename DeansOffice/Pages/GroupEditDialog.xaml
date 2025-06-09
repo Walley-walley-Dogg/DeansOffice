@@ -13,16 +13,16 @@
 
     <StackPanel Margin="10">
         <TextBlock Text="Имя группы:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtGroupName" Text="{Binding Group.GroupName}"/>
+        <TextBox x:Name="txtGroupName" />
 
         <TextBlock Text="Курс:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtCourse" Text="{Binding Group.Course}" />
+        <TextBox x:Name="txtCourse"  />
 
         <TextBlock Text="Направление:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtSpeciality" Text="{Binding Group.Specialty}" />
+        <TextBox x:Name="txtSpeciality" />
 
         <TextBlock Text="ID Куратора:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtCuratorID" Text="{Binding Group.CuratorID}" />
+        <TextBox x:Name="txtCuratorID"  />
 
 
 

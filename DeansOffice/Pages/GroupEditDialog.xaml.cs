@@ -29,11 +29,22 @@ namespace DeansOffice.Pages
             InitializeComponent();
             _group = group;
             this.DataContext = ViewModel;
+            txtGroupName.Text = group.GroupName;
+            txtCourse.Text = group.Course.ToString();
+            txtSpeciality.Text = group.Specialty.ToString();
+            txtCuratorID.Text = group.CuratorID.ToString();
+
         }
 
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            ViewModel.Group.GroupName = txtGroupName.Text;
+            ViewModel.Group.Course = Convert.ToInt32(txtCourse.Text);
+            ViewModel.Group.Specialty = txtSpeciality.Text;
+            ViewModel.Group.CuratorID = Convert.ToInt32(txtCuratorID.Text);
+
+
             _group = ViewModel.Group;
             DialogResult = true;
             return;

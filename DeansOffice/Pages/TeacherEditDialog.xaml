@@ -13,19 +13,19 @@
 
     <StackPanel Margin="10">
         <TextBlock Text="Фамилия:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtLastName" Text="{Binding Teacher.LastName}"/>
+        <TextBox x:Name="txtLastName" />
         
         <TextBlock Text="Имя:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtFirstName" Text="{Binding Teacher.FirstName}"/>
+        <TextBox x:Name="txtFirstName" />
 
         <TextBlock Text="Отчество:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtMiddleName" Text="{Binding Teacher.MiddleName}"/>
+        <TextBox x:Name="txtMiddleName" />
 
         <TextBlock Text="Email:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtEmail" Text="{Binding Teacher.Email}"/>
+        <TextBox x:Name="txtEmail" />
 
         <TextBlock Text="PhoneNumber:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtPhoneNumber" Text="{Binding Teacher.PhoneNumber}"/>
+        <TextBox x:Name="txtPhoneNumber" />
 
         <TextBlock Text="Звание:" Foreground="White" Margin="0,5"/>
         <ComboBox x:Name="cbAcademicTitle" 

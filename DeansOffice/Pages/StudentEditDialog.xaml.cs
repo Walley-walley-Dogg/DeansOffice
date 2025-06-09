@@ -29,10 +29,29 @@ namespace DeansOffice.Pages
             InitializeComponent();
             _student = student;
             this.DataContext = ViewModel;
+            txtFirstName.Text = student.FirstName;
+            txtLastName.Text = student.LastName;
+            txtMiddleName.Text = student.MiddleName;
+            txtEmail.Text = student.Email;
+            txtPhoneNumber.Text = student.PhoneNumber;
+            txtGroupID.Text =  student.GroupID.ToString();
+            txtEnrollmentYear.Text = student.EnrollmentYear.ToString();
+            dpBirthDate.Text = student.BirthDate.ToString();
+            cbGender.SelectedValue = student.Gender;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            ViewModel.Student.FirstName = txtFirstName.Text;
+            ViewModel.Student.LastName = txtLastName.Text;
+            ViewModel.Student.MiddleName = txtMiddleName.Text;
+            ViewModel.Student.Email = txtEmail.Text;
+            ViewModel.Student.PhoneNumber = txtPhoneNumber.Text;
+            ViewModel.Student.GroupID = Convert.ToInt32(txtGroupID.Text);
+            ViewModel.Student.EnrollmentYear = Convert.ToInt32(txtEnrollmentYear.Text);
+            ViewModel.Student.BirthDate = Convert.ToDateTime(dpBirthDate.Text);
+            ViewModel.Student.Gender = cbGender.Text;
+            
             _student = ViewModel.Student;
             DialogResult = true;
             return;

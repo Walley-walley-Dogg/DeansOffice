@@ -30,10 +30,16 @@ namespace DeansOffice.Pages
             InitializeComponent();
             _teacher = teacher;
             this.DataContext = ViewModel;
+            txtFirstName.Text = teacher.FirstName;
+            txtLastName.Text = teacher.LastName;
+            txtEmail.Text = teacher.Email;
+            txtMiddleName.Text = teacher.MiddleName;
+            txtPhoneNumber.Text = teacher.PhoneNumber;
+            cbAcademicTitle.Text = teacher.AcademicTitle;
+            cbDepartment.Text = teacher.Department;
         }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            _teacher = ViewModel.teacher;
             ViewModel.teacher.FirstName = txtFirstName.Text;
             ViewModel.teacher.LastName = txtLastName.Text;
             ViewModel.teacher.MiddleName = txtMiddleName.Text;
@@ -41,6 +47,7 @@ namespace DeansOffice.Pages
             ViewModel.teacher.Email = txtPhoneNumber.Text;
             ViewModel.teacher.AcademicTitle = cbAcademicTitle.Text;
             ViewModel.teacher.Department = cbDepartment.Text;
+            _teacher = ViewModel.teacher;
 
             DialogResult = true;
             return;

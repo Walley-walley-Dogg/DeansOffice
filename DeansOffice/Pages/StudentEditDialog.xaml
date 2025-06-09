@@ -14,36 +14,35 @@
 
     <StackPanel Margin="10">
         <TextBlock Text="Фамилия:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtLastName" Text="{Binding Student.LastName}"/>
+        <TextBox x:Name="txtLastName"/>
 
         <TextBlock Text="Имя:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtFirstName" Text="{Binding Student.FirstName}" />
+        <TextBox x:Name="txtFirstName"  />
 
         <TextBlock Text="Отчество:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtMiddleName" Text="{Binding Student.MiddleName}" />
+        <TextBox x:Name="txtMiddleName"  />
         
         <TextBlock Text="Email:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtEmail" Text="{Binding Student.Email}" />
+        <TextBox x:Name="txtEmail"  />
 
         <TextBlock Text="Номер телефонв:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtPhoneNumber" Text="{Binding Student.PhoneNumber}" />
+        <TextBox x:Name="txtPhoneNumber"  />
 
         <TextBlock Text="Дата рождения:" Foreground="White" Margin="0,5"/>
-        <DatePicker x:Name="dpBirthDate" SelectedDate="{Binding Student.BirthDate}" />
+        <DatePicker x:Name="dpBirthDate"  />
 
         <TextBlock Text="Пол:" Foreground="White" Margin="0,5"/>
         <ComboBox x:Name="cbGender" 
           ItemsSource="{Binding Genders}" 
           SelectedItem="{Binding Student.Gender}"
-          DisplayMemberPath="."
-          SelectedValuePath="."
+          
           />
 
         <TextBlock Text="Год поступления:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtEnrollmentYear" Text="{Binding Student.EnrollmentYear}" />
+        <TextBox x:Name="txtEnrollmentYear"  />
 
         <TextBlock Text="ID Группы:" Foreground="White" Margin="0,5"/>
-        <TextBox x:Name="txtGroupID" Text="{Binding Student.GroupID}"/>
+        <TextBox x:Name="txtGroupID" />
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
             <Button Content="Сохранить" Click="btnSave_Click" Style="{StaticResource PrimaryButtonStyle}" Width="100"/>
